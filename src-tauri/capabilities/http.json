@@ -1,0 +1,15 @@
+{
+  "identifier": "http",
+  "description": "Allows making HTTP requests",
+  "windows": ["main"],
+  "permissions": [
+    {
+      "identifier": "http:default",
+      "allow": [
+        {
+          "url": "https://digger-browser.vercel.app/api/*"
+        }
+      ]
+    }
+  ]
+}
