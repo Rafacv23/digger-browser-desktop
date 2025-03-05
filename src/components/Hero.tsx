@@ -2,8 +2,12 @@ export default function Hero() {
   return (
     <div>
       <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
+        <a href="https://digger-browser.vercel.app" target="_blank">
+          <img
+            src="/favicon.png"
+            className="logo vite"
+            alt="Digger browser logo"
+          />
         </a>
       </div>
       <h1>Welcome to Digger</h1>

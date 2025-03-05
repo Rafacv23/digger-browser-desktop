@@ -16,6 +16,11 @@ function App() {
     try {
       setLoading(true)
       // Fetching data from the API
+
+      if (!query) {
+        return setLoading(false)
+      }
+
       const res = await fetch(
         `https://digger-browser.vercel.app/api/search?q=${query}`,
         {

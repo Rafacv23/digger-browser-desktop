@@ -96,7 +96,7 @@ h1 {
 input,
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--primary);
   padding: 0.6em 1.2em;
   display: flex;
   align-items: center;
@@ -141,11 +141,17 @@ button {
     color: var(--primary);
   }
 
-  input,
-  button {
+  input {
     color: #ffffff;
-    background-color: #0f0f0f98;
+    background-color: transparent;
+    border: 1px solid var(--primary);
   }
+
+  button {
+    background-color: var(--primary);
+    gap: 0.5rem;
+  }
+
   button:active {
     background-color: #0f0f0f69;
   }
