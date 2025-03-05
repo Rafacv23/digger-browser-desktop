@@ -47,6 +47,26 @@ export function PreSearchMenu() {
       ],
       resume: "This is a test resume",
     },
+    {
+      query: "test",
+      pages: [
+        {
+          title: "Test Page",
+          link: "https://www.test.com",
+        },
+      ],
+      resume: "This is a test resume",
+    },
+    {
+      query: "test",
+      pages: [
+        {
+          title: "Test Page",
+          link: "https://www.test.com",
+        },
+      ],
+      resume: "This is a test resume",
+    },
   ]
 
   const related = recentSearchs.map((search: ApiResponse) => {
@@ -59,23 +79,23 @@ export function PreSearchMenu() {
   return recentSearchs.length > 0 ? (
     <div className="flex flex-col">
       <h2>Recent</h2>
-      <ul className="flex flex-wrap gap-2 mb-4">
+      <ul className="recentSearchsList">
         {recentSearchs.map((search: ApiResponse) => (
           <Badge query={search.query} key={search.query} />
         ))}
       </ul>
       <h2>Related</h2>
-      <ul className="flex flex-col gap-2">
+      <ul className="list">
         {related.map((pages) => (
           <li key={pages[0].title}>
-            <ul className="flex flex-col gap-2">
+            <ul className="list">
               {pages.map((page) => (
                 <li key={page.title}>
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href={page.link}
-                    className="flex items-center justify-between"
+                    className="list-item"
                   >
                     {retrieveDomain(page.link)} | {page.title}
                     <ExternalLink size={16} />

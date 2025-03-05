@@ -6,7 +6,7 @@
   font-family: Literata, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 500;
 
   --primary: #7af2d3;
   --background: #010f0b;
@@ -21,6 +21,37 @@
   -webkit-text-size-adjust: 100%;
 }
 
+ul,
+li {
+  list-style-type: none;
+}
+
+.badge {
+  background-color: var(--primary);
+  color: var(--background);
+  border-radius: 8px;
+  padding: 0.5em 1em;
+}
+
+.recentSearchsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .container {
   margin: 0;
   padding-top: 10vh;
@@ -29,7 +60,6 @@
   justify-content: center;
   text-align: center;
   background-color: var(--background);
-  color: var(--primary);
 }
 
 .logo {
@@ -50,12 +80,13 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: white;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+  color: var(--primary);
+  text-decoration: underline;
 }
 
 h1 {
@@ -68,7 +99,7 @@ button {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   display: flex;
-  aling-items: center;
+  align-items: center;
   justify-content: center;
   font-size: 1em;
   font-weight: 500;
@@ -107,7 +138,7 @@ button {
   }
 
   a:hover {
-    color: #24c8db;
+    color: var(--primary);
   }
 
   input,
