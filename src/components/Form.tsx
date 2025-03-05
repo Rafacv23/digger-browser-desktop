@@ -1,11 +1,12 @@
-import {Search} from "lucide-react"
+import { Search } from "lucide-react"
 
 interface FormProps {
   fetchData: () => void
   setQuery: (query: string) => void
+  setShowMenu: (showMenu: boolean) => void
 }
 
-export default function Form({ fetchData, setQuery }: FormProps) {
+export default function Form({ fetchData, setQuery, setShowMenu }: FormProps) {
   return (
     <form
       className="row"
@@ -18,10 +19,12 @@ export default function Form({ fetchData, setQuery }: FormProps) {
         id="greet-input"
         onChange={(e) => setQuery(e.currentTarget.value)}
         placeholder="I will summarize this for you..."
+        onClick={() => setShowMenu(true)}
       />
       <button type="submit">
-        <Search size={16}/>
-        Search</button>
+        <Search size={16} />
+        Search
+      </button>
     </form>
   )
 }
