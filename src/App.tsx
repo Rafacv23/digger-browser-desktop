@@ -3,11 +3,14 @@ import "./App.css"
 import { fetch } from "@tauri-apps/plugin-http"
 import Form from "./components/Form"
 import Hero from "./components/Hero"
+import { PreSearchMenu, ResultsMenu } from "./components/Menu"
+import { ApiResponse } from "./types/types"
 
 function App() {
   const [query, setQuery] = useState<string>("")
+  const [showMenu, setShowMenu] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(false)
-  const [searchResults, setSearchResults] = useState<string | null>(null)
+  const [searchResults, setSearchResults] = useState<ApiResponse | null>(null)
 
   async function fetchData() {
     try {
@@ -41,12 +44,18 @@ function App() {
   return (
     <main className="container">
       <Hero />
-      <Form setQuery={setQuery} fetchData={fetchData} />
+      <Form
+        setQuery={setQuery}
+        fetchData={fetchData}
+        setShowMenu={setShowMenu}
+      />
       {loading ? (
         "Loading..."
-      ) : (
-        <pre>{JSON.stringify(searchResults, null, 2)}</pre>
-      )}
+      ) : searchResults ? (
+        <ResultsMenu data={searchResults} />
+      ) : showMenu ? (
+        <PreSearchMenu />
+      ) : null}
     </main>
   )
 }
