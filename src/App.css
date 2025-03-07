@@ -45,6 +45,25 @@ header > div > a {
   color: var(--primary);
 }
 
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  margin-top: 4rem;
+}
+
+footer > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  &:hover {
+    color: var(--primary);
+  }
+}
+
 ul,
 li {
   list-style-type: none;
