@@ -8,14 +8,13 @@ export function ResultsMenu({ data }: { data: ApiResponse }) {
     <div>
       <h2>{data.query}</h2>
       <h2>Pages</h2>
-      <ul className="mb-4 flex flex-col">
+      <ul>
         {data.pages.map((page) => (
           <a
             key={page.link}
             target="_blank"
             rel="noopener noreferrer"
             href={page.link}
-            className="w-full flex items-center justify-between"
           >
             {retrieveDomain(page.link)} | {page.title}
             <ExternalLink size={16} />
@@ -23,11 +22,9 @@ export function ResultsMenu({ data }: { data: ApiResponse }) {
         ))}
       </ul>
       <h2>Results</h2>
-      <article className="prose prose-sm max-w-none">
+      <article>
         {data.resume.split("\n").map((paragraph, index) => (
-          <p key={index} className="mb-4">
-            {paragraph}
-          </p>
+          <p key={index}>{paragraph}</p>
         ))}
       </article>
     </div>
@@ -77,7 +74,7 @@ export function PreSearchMenu() {
   })
 
   return recentSearchs.length > 0 ? (
-    <div className="flex flex-col">
+    <div>
       <h2>Recent</h2>
       <ul className="recentSearchsList">
         {recentSearchs.map((search: ApiResponse) => (
