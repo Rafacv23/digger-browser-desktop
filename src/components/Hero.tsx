@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="row">
         <a href={WEBSITE} target="_blank">
           <img
-            src="/favicon.png"
+            src="/favicon3.png"
             className="logo vite"
             alt="Digger browser logo"
           />

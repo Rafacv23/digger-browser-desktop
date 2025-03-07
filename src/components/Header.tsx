@@ -5,7 +5,7 @@ export default function Header() {
     <header>
       <div>
         <a href={WEBSITE} target="_blank" title="Go to web version">
-          <img src="favicon.png" alt="Digger browser logo" width={60} />
+          <img src="favicon3.png" alt="Digger browser logo" width={60} />
           Digger Browser
         </a>
       </div>
