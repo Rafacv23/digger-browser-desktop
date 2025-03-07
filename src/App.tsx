@@ -5,6 +5,7 @@ import Form from "./components/Form"
 import Hero from "./components/Hero"
 import { PreSearchMenu, ResultsMenu } from "./components/Menu"
 import { ApiResponse } from "./types/types"
+import Skeleton from "./components/Skeleton"
 
 function App() {
   const [query, setQuery] = useState<string>("")
@@ -53,9 +54,10 @@ function App() {
         setQuery={setQuery}
         fetchData={fetchData}
         setShowMenu={setShowMenu}
+        loading={loading}
       />
       {loading ? (
-        "Loading..."
+        <Skeleton query={query} />
       ) : searchResults ? (
         <ResultsMenu data={searchResults} />
       ) : showMenu ? (
