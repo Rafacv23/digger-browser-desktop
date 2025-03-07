@@ -29,8 +29,14 @@ export default function Form({
         disabled={loading}
       />
       <button type="submit" disabled={loading}>
-        <Search size={16} />
-        Search
+        {loading ? (
+          "Searching..."
+        ) : (
+          <span>
+            <Search size={16} />
+            Search
+          </span>
+        )}
       </button>
     </form>
   )
