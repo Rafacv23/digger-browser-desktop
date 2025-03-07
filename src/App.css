@@ -14,11 +14,35 @@
   color: var(--primary);
   background-color: var(--background);
 
+  max-width: 900px;
+  margin: 0 auto;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  color: var(--primary);
+}
+
+header > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header > div > a {
+  display: flex;
+  align-items: center;
+  color: var(--primary);
 }
 
 ul,
